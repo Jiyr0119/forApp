@@ -1,0 +1,84 @@
+.order-box{
+	width: 100%;
+	background: #fff;	
+	-webkit-box-sizing: border-box;	
+	        box-sizing: border-box;
+	overflow: hidden;
+	margin-bottom: .2rem;
+}
+.order-num{
+	width: 100%;
+	height: .9rem;
+	line-height: .9rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	font-size: .28rem;
+}
+.order-msg{
+	width: 100%;
+	padding: .2rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.order-img{
+	width: 1.2rem;
+	height: 1.2rem;
+	display: block;
+}
+.order-name{
+	width: 4.3rem;
+	margin: 0 .3rem; 
+	font-size: .28rem;
+	box-sizing: border-box;
+	// overflow: hidden;
+	
+}
+.order-goods {	
+	width: 100%;
+	display:-webkit-box; 
+	overflow: hidden;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	line-height: .40rem;
+}
+.order-make{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.make-money{
+	background: #ff433f;
+	color: #fff;
+	padding: .1rem .1rem .08rem .1rem;	
+	margin-left: .1rem;
+	text-align: center;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: .24rem;
+}
+.make-num{
+	width: 1.2rem;
+	height: .4rem;
+	line-height: .4rem;
+	text-align: center;
+}
+.order-time{
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: .28rem;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: .2rem;
+	color: #a1a1a1;
+	line-height: .50rem;
+}

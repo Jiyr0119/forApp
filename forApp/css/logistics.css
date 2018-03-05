@@ -1,0 +1,61 @@
+.bg {
+	background-color: #fff;
+}
+.log-header{
+	width:100%;
+	padding: .2rem;
+	display: flex;
+	box-sizing: border-box;
+}
+.log-img{
+	width:1.2rem;
+	height:1.2rem;
+}
+.log-name{
+	font-size:.3rem;
+	line-height: .60rem;
+	margin-left: .2rem;
+}
+.log-body{
+	width: 100%;
+	margin-top: .2rem;
+	padding:.2rem;
+	box-sizing: border-box;
+}
+.log-msg{
+	width:100%;
+}
+#text-color{
+	color: #f2505d;
+}
+.tab-bg{
+	background-color: #f2505d;
+}
+.log-item{
+	width:100%;
+	display: flex;
+	color:#a1a1a1;
+}
+.log-line{
+	width: 5%;
+}
+
+.log-text{
+	width:95%;
+	box-sizing: border-box;
+	padding: .2rem;
+	line-height: .48rem;
+	font-size: .24rem;
+}
+.bottom-tab {
+	display: inline-block;
+	width: .2rem;
+	height: .2rem;
+	border-radius: 50%;
+	background:#cdcdcd;
+	margin-left: -.3rem;
+}
+.bottom-time{
+	width: 100%;
+	line-height: .4rem;
+}

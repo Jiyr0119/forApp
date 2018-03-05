@@ -1,0 +1,63 @@
+div{
+
+	width:100%;
+	display:none;
+}
+.tab{margin:0;padding:0;list-style:none;width:100%;overflow:hidden;display: flex;}
+.tab li{width:50%;height:.9rem;background:#fff;color:#a0a0a0;text-align:center;line-height:.9rem;cursor:pointer; }
+.on{display:block;}
+.tab li.cur{color: #fd4542;border-bottom:2px solid #fd4542;}
+.spec-goods{
+	width: 100%;
+	padding: .25rem;
+	// height: 2rem;
+	box-sizing: border-box;
+	display: flex;
+}
+.spec-img{
+	width: 1.6rem;
+	height: 1.6rem;
+	display: block;
+	// float: left;
+}
+.spec-name{
+	width: 3.5rem;
+	display: block;
+	// float: left;
+	// font-size: .36rem;
+	margin-left: .2rem;
+}
+.spec-name text {
+	width: 100%;
+	display: block;
+
+}
+.spec-btn{
+	width: 1.6rem;
+	height: .5rem;
+	background: #ff4442;
+	color: #fff;
+	border-radius: .3rem;
+	text-align: center;
+	line-height: .6rem;
+	margin-top:1rem; 
+	display: inline-block;
+}
+.spec-prompt{
+	width: 81%;
+	line-height: .36rem;
+}
+.spec-Auditing{
+	width: 18%;
+	height: .5rem;
+	line-height: .6rem;
+	text-align: center;
+	border: 1px solid #fd4542;
+	border-radius: 15px;
+	color: #fd4542;
+	margin-left: .1rem;
+	margin-top: .1rem;
+}
+.none{
+	display: none;
+}

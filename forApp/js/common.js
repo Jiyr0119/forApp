@@ -9,3 +9,4 @@ new function (){
 	   _self.changePage();
 	   window.addEventListener('resize',function(){_self.changePage();},false);
 }
+
