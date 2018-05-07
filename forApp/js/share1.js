@@ -32,7 +32,7 @@ function openApp(paramsArr) {
         } else if (browser.versions.weibo) {
             // var appUrl = "https://attopstar.com/starRank/applinks/index.html";
         } else {
-            var appUrl = 'wst://goodsId:'+ paramsArr +'';
+            var appUrl = '://goodsId:'+ paramsArr +'';
             window.location.href = appUrl;
         }
             // var appUrl = "https://attopstar.com/starRank/applinks/index.html?data=" + params;
@@ -44,7 +44,7 @@ function openApp(paramsArr) {
         } else if (browser.versions.weibo) {
             // var appUrl = "https://attopstar.com/starRank/applinks/index.html";
         } else {
-            var appUrl = 'wst://com.yhm.wst/action?action={"target":"com.yhm.wst.detail.GoodsDetailActivity", "params":{"extra_goods_id":"' + paramsArr + '"}, "authRequired":"2"}';
+            var appUrl = '://com.yhm.wst/action?action={"target":"com.yhm.wst.detail.GoodsDetailActivity", "params":{"extra_goods_id":"' + paramsArr + '"}, "authRequired":"2"}';
 
             // var timeout, t = 3000, hasApp = true;  
             //  	setTimeout(function () {  
