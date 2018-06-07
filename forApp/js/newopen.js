@@ -93,13 +93,34 @@ function openApp(paramsArr) {
 
 $(".open-app").on("click", function() {
     openApp(urlRequest.goodsId);
+    var clipboard = new ClipboardJS(".open-app");
+    clipboard.on('success', function(e) {
+                console.log(e);
+    });
+    clipboard.on('error', function(e) {
+                console.log(e);
+    });
 });
 $(".download").on("click", function() {
     openApp();
 });
 $("#go-cart").on("click", function() {
     openApp(urlRequest.goodsId);
+    var clipboard = new ClipboardJS("#go-cart");
+    clipboard.on('success', function(e) {
+                console.log(e);
+    });
+    clipboard.on('error', function(e) {
+                console.log(e);
+    });
 });
 $("#go-buy").on("click", function() {
     openApp(urlRequest.goodsId);
+    var clipboard = new ClipboardJS("#go-buy");
+    clipboard.on('success', function(e) {
+                console.log(e);
+    });
+    clipboard.on('error', function(e) {
+                console.log(e);
+    });
 });

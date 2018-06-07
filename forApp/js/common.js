@@ -8,5 +8,6 @@ new function (){
 	   }
 	   _self.changePage();
 	   window.addEventListener('resize',function(){_self.changePage();},false);
-}
-
+ }
+// var baseURI = 'https://gatewst.1haomei.com/shop/';//
+var baseURI = 'https://test20.1haomei.com/shop/';//

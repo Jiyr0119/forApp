@@ -39,82 +39,85 @@ function formatNumber(n) {
 
 var browser = {
 
-        versions: function() {
+    versions: function() {
 
-                  var u = navigator.userAgent,
+        var u = navigator.userAgent,
 
-                        app = navigator.appVersion;
+            app = navigator.appVersion;
 
-                  return {
+        return {
 
-                            trident: u.indexOf('Trident') > -1,                        /*IE内核*/
+            trident: u.indexOf('Trident') > -1, /*IE内核*/
 
-                            presto: u.indexOf('Presto') > -1,          /*opera内核*/
+            presto: u.indexOf('Presto') > -1, /*opera内核*/
 
-                            webKit: u.indexOf('AppleWebKit') > -1, /*苹果、谷歌内核*/
+            webKit: u.indexOf('AppleWebKit') > -1, /*苹果、谷歌内核*/
 
-                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,        /*火狐内核*/
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, /*火狐内核*/
 
-                             mobile: !!u.match(/AppleWebKit.*Mobile.*/),        /*是否为移动终端*/
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), /*是否为移动终端*/
 
-                             ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), /*ios终端*/
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), /*ios终端*/
 
-                             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, /*android终端或者uc浏览器*/
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, /*android终端或者uc浏览器*/
 
-                             iPhone: u.indexOf('iPhone') > -1,          /*是否为iPhone或者QQHD浏览器*/
+            iPhone: u.indexOf('iPhone') > -1, /*是否为iPhone或者QQHD浏览器*/
 
-                             iPad: u.indexOf('iPad') > -1,      /*是否iPad*/
+            iPad: u.indexOf('iPad') > -1, /*是否iPad*/
 
-                             webApp: u.indexOf('Safari') == -1,          /*是否web应该程序，没有头部与底部*/
+            webApp: u.indexOf('Safari') == -1, /*是否web应该程序，没有头部与底部*/
 
-                             souyue: u.indexOf('souyue') > -1,
+            souyue: u.indexOf('souyue') > -1,
 
-                             superapp: u.indexOf('superapp') > -1,
+            superapp: u.indexOf('superapp') > -1,
 
-                             weixin:u.toLowerCase().indexOf('micromessenger') > -1,
+            weixin: u.toLowerCase().indexOf('micromessenger') > -1,
 
-                             Safari:u.indexOf('Safari') > -1
+            Safari: u.indexOf('Safari') > -1
 
-                   };
+        };
 
-          },
+    },
 
-                   language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    language: (navigator.browserLanguage || navigator.language).toLowerCase()
 
 };
 
 function GetRequest() {
     var arrStk = null;
     var url = location.search; //获取url中"?"符后的字串
-    var outstr =  decodeURI(url);
+    var outstr = decodeURI(url);
     var theRequest = new Object();
     if (outstr.indexOf("?") != -1) {
         var str = outstr.substr(1);
         strs = str.split("&");
-        for(var i = 0; i < strs.length; i ++) {
+        for (var i = 0; i < strs.length; i++) {
             theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
         }
     }
     return theRequest;
-};
-function GetInFo(){
+}
+;
+function GetInFo() {
     var token = null;
-    if(window.androidJSBridge){
+    if (window.androidJSBridge) {
         var result = androidJSBridge.getClientInfo(),
             info = JSON.parse(result);
-            token = info.token;
+        token = info.token;
     }
     return token;
-};
+}
+;
 
-function handleShowProgress(){
-    if(window.androidJSBridge){//是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");
+function handleShowProgress() {
+    if (window.androidJSBridge) { //是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");
         var result = androidJSBridge.showProgress();
-    }       
-};
+    }
+}
+;
 
-function handleCloseProgress(){
-    if(window.androidJSBridge){//是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");
+function handleCloseProgress() {
+    if (window.androidJSBridge) { //是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");
         var result = androidJSBridge.closeProgress();
-    }       
+    }
 };

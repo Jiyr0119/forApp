@@ -1,4 +1,4 @@
-var url = 'https://test20.1haomei.com/shop/',
+var url = baseURI,
 	token;
 var request = new HproseHttpClient(url+'GoodsDetails.php', ['getGoodsDetails'],{ timeout: 20000 });
 
@@ -7,7 +7,6 @@ $(function(){
     urlRequest = GetRequest();
     request.getGoodsDetails(urlRequest.goodsId,
     function (result) {
-
         if (typeof(result) === "undefined") {
             alert("接口返回错误");
         } else {

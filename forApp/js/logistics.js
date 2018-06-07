@@ -1,4 +1,4 @@
-var url = 'https://test20.1haomei.com/shop/',
+var url = baseURI,
 	token,
 	id;
 var request = new HproseHttpClient(url+'Logistics.php', ['getLogisticsInfo'],{ timeout: 20000 });
@@ -15,22 +15,16 @@ $(function(){
 	handleShowProgress();
 	getLikeInfo();
     request.setHeader('token',token);
-    request.getLogisticsInfo(id,
+    request.getLogisticsInfo(id,1,
     	function (result) {
     		handleCloseProgress();
             if (typeof(result) === "undefined") {
                 alert("接口返回错误");
             } else {
-                let res = JSON.parse(result),
+                var res = JSON.parse(result),
                     content = '',
                     items = '',
                     list =res.data.reverse();
-    //             content = `
-			 //        <ul class="log-name">
-				// 		<li>承运公司：${res.ShipperName}</li>
-				// 		<li>快递单号：${id}</li>
-				// 	</ul>
-				// `
 				content =
 				  '<ul class="log-name"><li>\u627F\u8FD0\u516C\u53F8\uFF1A' +
 				  res.ShipperName +

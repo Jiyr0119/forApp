@@ -67,7 +67,7 @@ body{
 
 .open-app {
     width: 30%;
-    background-color: #ff4242;
+    background-color: #f21177;
     text-align: center;
     font-size: .28rem;
     -webkit-box-sizing: border-box;
@@ -242,7 +242,7 @@ body{
 }
 
 .bottom-tab li:nth-child(2) {
-    background-color: #ff4242;
+    background-color: #f21177;
 }
 .details-tit{
     width: 100%;

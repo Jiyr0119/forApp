@@ -1,4 +1,4 @@
-var url = 'https://test20.1haomei.com/shop/',
+var url = baseURI,
     token, lv;
 var request = new HproseHttpClient(url + 'GetProduct.php', ['getSepecialGoods'], { timeout: 20000 }),
     send = new HproseHttpClient(url + 'GetProduct.php', ['applySpecial'], { timeout: 20000 });
@@ -69,13 +69,13 @@ $(function() {
     request.setHeader('token', token);
     request.getSepecialGoods('',
         function(result) {
-            handleCloseProgress();
             console.log(result)
+            handleCloseProgress();
             if (typeof(result) === "undefined") {
                 alert("接口返回错误");
             } else {
                 if (result.error == 0) {
-                    let res = result.data,
+                    var res = result.data,
                         status = result.is_apply,
                         content = '',
                         has = result.is_special,
@@ -101,7 +101,9 @@ $(function() {
                     //   </li>`
                     // })
                 res.map(function(item) {
-                  item.goods_img = item.goods_img.substring(0, item.goods_img.indexOf("?"));
+                    if(item.goods_img.indexOf("?") > 0) {
+                        item.goods_img = item.goods_img.substring(0, item.goods_img.indexOf("?"));
+                    }
                   item.id >= -2
                     ? (spec +=
                         '<li class="spec-goods GET border-bottom" data-id="' +
@@ -114,7 +116,7 @@ $(function() {
                         item.id +
                         '" class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
                         item.name +
-                        '</text><text style="color: #fd4341; font-size:.36rem;">\xA5' +
+                        '</text><text style="color: #f21177; font-size:.36rem;">\xA5' +
                         item.shopprice +
                         '</text></p><p data-id="' +
                         item.id +
@@ -132,7 +134,7 @@ $(function() {
                         item.id +
                         '"  class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
                         item.name +
-                        '</text><text style="color: #fd4341;">\xA5' +
+                        '</text><text style="color: #f21177;">\xA5' +
                         item.shopprice +
                         "</text></p></li>");
                 });

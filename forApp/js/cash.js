@@ -1,5 +1,5 @@
 'use strict';
-var url = 'https://test20.1haomei.com/shop/',
+var url = baseURI,//https://gatewst.1haomei.com   https://test20.1haomei.com
 	token;
 var request = new HproseHttpClient(url+'userInfo.php', ['getUserAccountDetail'],{ timeout: 20000 });
 

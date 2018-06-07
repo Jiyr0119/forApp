@@ -1,4 +1,4 @@
-var url = 'https://test20.1haomei.com/shop/',
+var url = baseURI,
 	token;
 var request = new HproseHttpClient(url+'Collection.php', ['getCollectionList'],{ timeout: 20000 }),
 	del = new HproseHttpClient(url+'Collection.php', ['removeCollection'],{ timeout: 20000 });
@@ -44,15 +44,14 @@ $(function(){
 	bindEvents();
 	var limit = '0,20';
 	request.setHeader('token',token);
-    request.getCollectionList('',
-    function (result) {
+    request.getCollectionList('',function (result) {
     	handleCloseProgress();
         if (typeof(result) === "undefined") {
             alert("接口返回错误");
         } else {
-            let res = maplistToArr(result), 
+            var res = maplistToArr(result), 
             	content = '';
-           $('.likeTit').html(`您已收藏<strong style="color:#fd7f7b;font-size: .4rem;margin: 0 .1rem;">${res.length}</strong>件商品`)
+           $('.likeTit').html('您已收藏<strong style="color:#fd7f7b;font-size: .4rem;margin: 0 .1rem;">'+res.length+'</strong>件商品')
     //        res.map( item => {
     //        		content += `
     //        		<div class="likeListItem border-right border-top">

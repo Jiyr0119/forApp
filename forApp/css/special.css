@@ -6,7 +6,7 @@ div{
 .tab{margin:0;padding:0;list-style:none;width:100%;overflow:hidden;display: flex;}
 .tab li{width:50%;height:.9rem;background:#fff;color:#a0a0a0;text-align:center;line-height:.9rem;cursor:pointer; }
 .on{display:block;}
-.tab li.cur{color: #fd4542;border-bottom:2px solid #fd4542;}
+.tab li.cur{color: #f21177;border-bottom:2px solid #f21177;}
 .spec-goods{
 	width: 100%;
 	padding: .25rem;
@@ -35,7 +35,7 @@ div{
 .spec-btn{
 	width: 1.6rem;
 	height: .5rem;
-	background: #ff4442;
+	background: #f21177;
 	color: #fff;
 	border-radius: .3rem;
 	text-align: center;
@@ -52,9 +52,9 @@ div{
 	height: .5rem;
 	line-height: .6rem;
 	text-align: center;
-	border: 1px solid #fd4542;
+	border: 1px solid #f21177;
 	border-radius: 15px;
-	color: #fd4542;
+	color: #f21177;
 	margin-left: .1rem;
 	margin-top: .1rem;
 }
