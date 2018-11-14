@@ -21,6 +21,7 @@ function maplistToArr(maplist) {
     }
     return list;
 }
+
 function formatTimeSec(date) {
     var year = date.getFullYear()
     var month = date.getMonth() + 1
@@ -47,25 +48,35 @@ var browser = {
 
         return {
 
-            trident: u.indexOf('Trident') > -1, /*IE内核*/
+            trident: u.indexOf('Trident') > -1,
+            /*IE内核*/
 
-            presto: u.indexOf('Presto') > -1, /*opera内核*/
+            presto: u.indexOf('Presto') > -1,
+            /*opera内核*/
 
-            webKit: u.indexOf('AppleWebKit') > -1, /*苹果、谷歌内核*/
+            webKit: u.indexOf('AppleWebKit') > -1,
+            /*苹果、谷歌内核*/
 
-            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, /*火狐内核*/
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
+            /*火狐内核*/
 
-            mobile: !!u.match(/AppleWebKit.*Mobile.*/), /*是否为移动终端*/
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+            /*是否为移动终端*/
 
-            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), /*ios终端*/
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            /*ios终端*/
 
-            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, /*android终端或者uc浏览器*/
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+            /*android终端或者uc浏览器*/
 
-            iPhone: u.indexOf('iPhone') > -1, /*是否为iPhone或者QQHD浏览器*/
+            iPhone: u.indexOf('iPhone') > -1,
+            /*是否为iPhone或者QQHD浏览器*/
 
-            iPad: u.indexOf('iPad') > -1, /*是否iPad*/
+            iPad: u.indexOf('iPad') > -1,
+            /*是否iPad*/
 
-            webApp: u.indexOf('Safari') == -1, /*是否web应该程序，没有头部与底部*/
+            webApp: u.indexOf('Safari') == -1,
+            /*是否web应该程序，没有头部与底部*/
 
             souyue: u.indexOf('souyue') > -1,
 
@@ -96,8 +107,8 @@ function GetRequest() {
         }
     }
     return theRequest;
-}
-;
+};
+
 function GetInFo() {
     var token = null;
     if (window.androidJSBridge) {
@@ -106,15 +117,13 @@ function GetInFo() {
         token = info.token;
     }
     return token;
-}
-;
+};
 
 function handleShowProgress() {
     if (window.androidJSBridge) { //是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");
         var result = androidJSBridge.showProgress();
     }
-}
-;
+};
 
 function handleCloseProgress() {
     if (window.androidJSBridge) { //是安卓跳转详情  openWindow属于安卓@JavascriptInterface方法  webview.addJavascriptInterface(new JavaScriptInterface(this), "androidJSBridge");

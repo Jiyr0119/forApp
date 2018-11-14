@@ -1,14 +1,18 @@
 var url = baseURI,
     token, lv;
-var request = new HproseHttpClient(url + 'GetProduct.php', ['getSepecialGoods'], { timeout: 20000 }),
-    send = new HproseHttpClient(url + 'GetProduct.php', ['applySpecial'], { timeout: 20000 });
+var request = new HproseHttpClient(url + 'GetProduct.php', ['getSepecialGoods'], {
+        timeout: 20000
+    }),
+    send = new HproseHttpClient(url + 'GetProduct.php', ['applySpecial'], {
+        timeout: 20000
+    });
 
 function getLikeInfo() {
 
     if (window.androidJSBridge) {
         var result = androidJSBridge.getClientInfo(),
             info = JSON.parse(result);
-            token = info.token,
+        token = info.token,
             lv = info.distribution_level;
     }
 
@@ -50,7 +54,7 @@ function handleSet() {
     send.setHeader('token', token);
     send.applySpecial('',
         function(result) {
-        handleCloseProgress();
+            handleCloseProgress();
             if (typeof(result) === "undefined" || result.error != 0) {
                 alert(result.err_msg);
             } else {
@@ -100,46 +104,46 @@ $(function() {
                     //     </p>
                     //   </li>`
                     // })
-                res.map(function(item) {
-                    if(item.goods_img.indexOf("?") > 0) {
-                        item.goods_img = item.goods_img.substring(0, item.goods_img.indexOf("?"));
-                    }
-                  item.id >= -2
-                    ? (spec +=
-                        '<li class="spec-goods GET border-bottom" data-id="' +
-                        item.id +
-                        '"><img class="spec-img" data-id="' +
-                        item.id +
-                        '" src="' +
-                        item.goods_img +
-                        '" alt=""><p data-id="' +
-                        item.id +
-                        '" class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
-                        item.name +
-                        '</text><text style="color: #f21177; font-size:.36rem;">\xA5' +
-                        item.shopprice +
-                        '</text></p><p data-id="' +
-                        item.id +
-                        '" class="spec-btn" style="display:' +
-                        (lv == 0 ? "block" : "none") +
-                        '">\u7ACB\u5373\u8D2D\u4E70</p></li>')
-                    : (content +=
-                        '<li class="spec-goods GET border-bottom" data-id="' +
-                        item.id +
-                        '"><img class="spec-img" data-id="' +
-                        item.id +
-                        '" src="' +
-                        item.goods_img +
-                        '" alt=""><p  data-id="' +
-                        item.id +
-                        '"  class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
-                        item.name +
-                        '</text><text style="color: #f21177;">\xA5' +
-                        item.shopprice +
-                        "</text></p></li>");
-                });
-                $('.one').eq(0).append(spec)
-                $('.one').eq(1).append(content)
+                    res.map(function(item) {
+                        if (item.goods_img.indexOf("?") > 0) {
+                            item.goods_img = item.goods_img.substring(0, item.goods_img.indexOf("?"));
+                        }
+                        item.id >= -2 ?
+                            (spec +=
+                                '<li class="spec-goods GET border-bottom" data-id="' +
+                                item.id +
+                                '"><img class="spec-img" data-id="' +
+                                item.id +
+                                '" src="' +
+                                item.goods_img +
+                                '" alt=""><p data-id="' +
+                                item.id +
+                                '" class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
+                                item.name +
+                                '</text><text style="color: #f21177; font-size:.36rem;">\xA5' +
+                                item.shopprice +
+                                '</text></p><p data-id="' +
+                                item.id +
+                                '" class="spec-btn" style="display:' +
+                                (lv == 0 ? "block" : "none") +
+                                '">\u7ACB\u5373\u8D2D\u4E70</p></li>') :
+                            (content +=
+                                '<li class="spec-goods GET border-bottom" data-id="' +
+                                item.id +
+                                '"><img class="spec-img" data-id="' +
+                                item.id +
+                                '" src="' +
+                                item.goods_img +
+                                '" alt=""><p  data-id="' +
+                                item.id +
+                                '"  class="spec-name"><text style="margin-bottom: .6rem;margin-top: .2rem;">' +
+                                item.name +
+                                '</text><text style="color: #f21177;">\xA5' +
+                                item.shopprice +
+                                "</text></p></li>");
+                    });
+                    $('.one').eq(0).append(spec)
+                    $('.one').eq(1).append(content)
                     if (status == 1) {
                         $(".one .spec-Auditing").hide();
                         $(".one .spec-prompt").show().html('申请成功，48小时内客服会处理您的需求。');
